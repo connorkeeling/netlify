@@ -1,13 +1,13 @@
 baseURL = "http://example.com/"
 languageCode = "en-us"
-title = "Minimal"
+title = "Connor's Data Science Blog"
 theme = "minimal"
 disqusShortname = "username" # delete this to disable disqus comments
 googleAnalytics = ""
 
 [params]
-    author = "Calin Tataru"
-    description = "Personal blog theme powered by Hugo"
+    author = "Connor Keeling"
+    description = "A detailed documentary of the daily activities of a data science student"
     githubUsername = "#"
     accent = "red"
     showBorder = true

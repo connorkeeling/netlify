@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Minimal</title>
+    <title>Categories on Connor&#39;s Data Science Blog</title>
     <link>http://example.com/categories/</link>
-    <description>Recent content in Categories on Minimal</description>
+    <description>Recent content in Categories on Connor&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -13,7 +13,7 @@
     <item>
       <title>R</title>
       <link>http://example.com/categories/r/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://example.com/categories/r/</guid>
       <description></description>

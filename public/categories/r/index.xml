@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R on Minimal</title>
+    <title>R on Connor&#39;s Data Science Blog</title>
     <link>http://example.com/categories/r/</link>
-    <description>Recent content in R on Minimal</description>
+    <description>Recent content in R on Connor&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 30 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://example.com/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scatter Plots</title>
+      <link>http://example.com/post/scatter-plots/</link>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/post/scatter-plots/</guid>
+      <description>library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(ggplot2)One form of visualizing our data is by the scatterplot. In the 9:00am intro class, we worked on making scatter plots in RStudio, running a query searching for players with at least 400 career homeruns
+#Extractcing Data----------------------------query&amp;lt;-&amp;quot;SELECT playerID,sum(HR) AS career_HR ,sum(SO) AS career_SO FROM BattingGROUP BY playerIDHAVING sum(HR)&amp;gt;=400&amp;quot;result&amp;lt;-sqldf(query)#Visulaizing Data----------------------------ggplot()+geom_point(data=result,aes(x=career_SO,y=career_HR), size=3, color=&amp;quot;blue&amp;quot;)+ggtitle(&amp;quot;Career Strikeouts vs.</description>
+    </item>
     
     <item>
       <title>Hello R Markdown</title>
@@ -17,9 +27,9 @@
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>http://example.com/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
     </item>
     
   </channel>
