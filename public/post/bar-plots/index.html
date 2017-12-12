@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tags</title>
+        <title>Bar Plots</title>
         <style>
 
     html body {
@@ -60,9 +60,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.31.1" />
         
-        <link href="http://example.com/tags/index.xml" rel="alternate" type="application/rss+xml" title="Connor&#39;s Data Science Blog" />
-        <link href="http://example.com/tags/index.xml" rel="feed" type="application/rss+xml" title="Connor&#39;s Data Science Blog" />
-        
         
         
     </head>
@@ -75,7 +72,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Tags</a>
+                    <a class="navbar-brand visible-xs" href="#">Bar Plots</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -124,9 +121,7 @@
 
 <main>
 
-    <h2>Tags</h2>
-
-     <div class="item">
+    <div class="item">
 
     
     
@@ -135,72 +130,68 @@
     
     
 
-    <h4><a href="/tags/plot/">Plot</a></h4>
-    <h5>July 23, 2015</h5>
+    <h4><a href="/post/bar-plots/">Bar Plots</a></h4>
+    <h5>December 12, 2017</h5>
     
 
 </div>
-  <div class="item">
 
-    
-    
-    
 
-    
-    
+    <br> <div class="text-justify"><pre class="r"><code>library(Lahman)
+library(sqldf)
+library(ggplot2)</code></pre>
+<p>Bar Plots are simply a visualization of data using bars. Below is a Bar Plot displaying each MLB team’s homerun totals in 1980.</p>
+<pre class="r"><code>query&lt;-&quot;SELECT name,HR
+FROM Teams
+WHERE yearID=1980
+ORDER BY HR&quot;
 
-    <h4><a href="/tags/r-markdown/">R Markdown</a></h4>
-    <h5>July 23, 2015</h5>
-    
+result&lt;-sqldf(query)
 
+result$name&lt;-factor(result$name,levels=result$name)
+
+ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat=&#39;identity&#39;,color=&quot;white&quot;,fill=&quot;blue&quot;)+
+  coord_flip()+
+  ylab(&quot;Homeruns&quot;)+
+  xlab(&quot;Teams&quot;)+
+  ggtitle(&quot;1980 Team Homerun Distribution&quot;)</code></pre>
+<p><img src="/post/2017-12-12-bar-plots_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
-  <div class="item">
-
-    
-    
-    
 
     
     
 
-    <h4><a href="/tags/regression/">Regression</a></h4>
-    <h5>July 23, 2015</h5>
-    
-
-</div>
-  <div class="item">
-
-    
-    
     
 
     
-    
 
-    <h4><a href="/tags/scatter-plots/">Scatter Plots</a></h4>
-    <h5>October 30, 2017</h5>
-    
+        <h4 class="page-header">Comments</h4>
 
-</div>
-  <div class="item">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "username" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
     
-    
-    
-
-    
-    
-
-    <h4><a href="/tags/visualization/">Visualization</a></h4>
-    <h5>October 30, 2017</h5>
-    
-
-</div>
- 
 
 </main>
-
-
 
         <footer>
 

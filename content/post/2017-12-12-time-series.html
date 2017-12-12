@@ -1,0 +1,33 @@
+---
+title: Time Series
+author: Connor Keeling
+date: '2017-12-12'
+slug: time-series
+categories:
+  - R
+tags: []
+---
+
+
+
+<pre class="r"><code>library(Lahman)
+library(sqldf)
+library(ggplot2)</code></pre>
+<p>Time series are similiar to scatter plots because you can have points on the graph, but the major point that you are looking at with these are trends over time. Below is a Time Series displaying Babe Ruth’s home run totals over the years.</p>
+<pre class="r"><code># Extraction----------------------------
+
+query&lt;-&quot;SELECT yearID,HR
+FROM Batting
+WHERE playerID=&#39;ruthba01&#39;&quot;
+
+result&lt;-sqldf(query)
+
+# Visualization-------------------------
+
+ggplot()+
+  #geom_point(data=result,aes(x=yearID,y=HR))+
+  geom_line(data=result,aes(x=yearID,y=HR))+
+  ggtitle(&quot;Ruth&#39;s Homerun Totals Throughout the Years&quot;)+
+  xlab(&quot;Year&quot;)+
+  ylab(&quot;Homeruns&quot;)</code></pre>
+<p><img src="/post/2017-12-12-time-series_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>

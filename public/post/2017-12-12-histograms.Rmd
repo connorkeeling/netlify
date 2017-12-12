@@ -1,0 +1,26 @@
+---
+title: Histograms
+author: Connor Keeling
+date: '2017-12-12'
+slug: histograms
+categories: []
+tags: []
+---
+
+```{r warning=FALSE,message=FALSE}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+A histogram is a visual data representation using one column of data. In the code below, we made a histogram for body weight distribution of baseball players.
+```{r}
+query<-"SELECT weight
+FROM Master"
+
+result<-sqldf(query)
+
+ggplot()+
+  geom_histogram(data=result,aes(x=weight),color="green",fill="white",bins=50)+
+  ggtitle("Body Weight Distribution for Baseball Players")
+```
+
